@@ -12,6 +12,7 @@
         }
     </style>
     <!-- ============================ JAVASCRIPT ============================ -->
+    <script src="js/clock1.js"></script>
     <script type="text/javascript">
         function send()
         {
@@ -35,6 +36,12 @@
                 alert('Заповніть всі поля!!!');
                 return false;
             }
+        }
+    </script>
+    <script>
+        findow.onload = function()
+        {
+            setInterval(clockPainting(), 1000);
         }
     </script>
     <!-- ==================================================================== -->
@@ -63,6 +70,8 @@
         </tr>
         <tr>
             <td width="30%" valign="top">
+                <center><canvas id="canvas" hieght="120" width="120"></canvas></center>
+                <hr>
                 <font size="5" color="navy"><h2>Новини</h2></font>
                 <font size="5" >
                     <ul>
@@ -75,7 +84,7 @@
                     </ul>
                 </font>
                 <H1 align="center"><font color="green">Реєстрація</font></H1>
-                <form action="forma.php" method="post" onsubmit="return send();">
+                <form action="forma.php" method="post" onsubmit="send();">
                     <TABLE align="center">
                         <TR>
                             <TD>
